@@ -1,15 +1,44 @@
 :root {
-    --font-size-small: 1.2rem;
-    --font-size-medium: 1.6rem;
-    --font-size-large: 1.8rem;
-    --font-size-x-large: 2.3rem;
-    --font-size-xx-large: 4.8rem;
+  --color-primary: #D73953;
+  --color-black: #090909;
+  --color-white: #ffffff;
+  --color-light-grey: #f3f3f3; /* Corrected the typo from 'ligth' to 'light' */
+  --color-dark-grey: #353535;
+  --text-color: var(--color-black);
+  --font-family-base: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-family-title: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-size-small: 1.2rem;
+  --font-size-medium: 1.6rem;
+  --font-size-large: 1.8rem;
+  --font-size-x-large: 2.3rem;
+  --font-size-xx-large: 4.8rem;
 }
 
 html {
-    font-size: 62.5%;
+  scroll-behavior: smooth;
+  font-size: 62.5%; /* Sets the base font size to 10px for easier rem calculations */
 }
 
 body {
-    font-size: var(--font-size-medium);
+  color: var(--text-color);
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-medium); /* Ensures body text uses the medium font size */
+}
+
+a {
+  color: var(--text-color);
+  text-decoration: none; /* Assuming you want to remove underline from links */
+}
+
+.visually-hidden {
+  display: none; /* Hides elements from visual UI, but still accessible to screen readers */
+}
+
+.card-category, .section-tagline {
+  color: var(--color-primary); /* Groups similar styles for efficiency */
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-family-title);
+  /* Consider adding font-size here if you want different sizes for each heading */
 }
