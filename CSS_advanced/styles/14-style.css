@@ -1,0 +1,5 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/* Continue with the rest of the styles from Normalize.css and your custom styles */
