@@ -462,3 +462,423 @@ template {
 [hidden] {
   display: none;
 }
+/* Global box-sizing rule to ensure elements include padding and border in their total width and height */
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+/* Base HTML settings for smooth scrolling and base font size for rem units */
+html {
+  scroll-behavior: smooth;
+  font-size: 62.5%;
+}
+
+/* Header styles, utilizing CSS custom properties for dynamic spacing */
+.header {
+  padding: var(--header-padding);
+}
+
+/* Positioning of the header logo with CSS variables for flexibility */
+.header-logo {
+  position: var(--header-logo-position);
+}
+
+/* Styling for the header logo link, including positioning for precise alignment */
+.header-logo a {
+  display: var(--header-logo-link-display);
+  position: var(--header-logo-link-position);
+  top: var(--header-logo-link-top);
+  left: var(--header-logo-link-left);
+}
+
+/* Body styling setting default text color, font family, size, and weight */
+body {
+  color: var(--text-color);
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-medium);
+  font-weight: var(--font-weight-regular);
+  min-height: var(--line-height-base);
+}
+
+/* Link styling for different states to ensure consistent and accessible navigation */
+a:link {
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+a:visited {
+  font-style: italic;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:active {
+  background-color: var(--color-light-grey);
+}
+
+/* Button styling using CSS variables for easy theme adjustments */
+.button {
+  display: var(--button-display);
+  padding: var(--button-padding);
+  border: var(--button-border);
+  font-size: var(--button-font-size);
+  color: var(--button-color);
+  text-decoration: var(--button-text-decoration);
+}
+
+/* Hover state for buttons to provide visual feedback */
+.button:hover {
+  color: var(--button-hover-color);
+  text-decoration: var(--button-hover-text-decoration);
+  background: var(--button-hover-background);
+}
+
+/* Utility class to visually hide elements but keep them accessible to screen readers */
+.visually-hidden {
+  display: none;
+}
+
+/* Styling for category tags within cards, using primary color for emphasis */
+.card-category {
+  color: var(--color-primary);
+}
+
+/* Styling for section taglines, using custom properties for font and color */
+.section-tagline {
+  color: var(--color-primary);
+  font-family: var(--font-family-title);
+  text-transform: var(--section-tagline-transform);
+  font-weight: var(--font-weight-bold);
+  margin: var(--section-tagline-margin);
+}
+
+/* Styling for row lists to remove default list styling and ensure proper layout */
+ul.row {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Clearfix for .row to clear floated child elements */
+.row::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Column width classes for grid layouts, allowing for responsive designs */
+.col-1-3 {
+  width: 33.33%;
+}
+
+.col-1-2 {
+  width: 50%;
+}
+
+/* Base styling for all column classes to float left and have padding for spacing */
+[class^="col-"] {
+  float: left;
+  padding: 0.5rem;
+}
+
+/* Container class to center content and set max width */
+.container {
+  width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Styling for section titles, using custom properties for font, size, and color */
+.section-title {
+  font-family: var(--font-family-title);
+  font-size: var(--font-size-xx-large);
+  font-weight: var(--font-weight-bold);
+  margin: var(--section-title-margin);
+  color: var(--section-title-color);
+}
+
+/* General padding for sections to ensure consistent spacing */
+.section {
+  padding: var(--section-padding);
+}
+
+/* Styling for section headers, including text alignment and padding */
+.section-header {
+  text-align: var(--section-header-align);
+  padding: var(--section-header-padding);
+}
+
+/* Dark theme adjustments for sections using data attributes */
+[data-section-theme="dark"] {
+  --text-color: var(--color-white);
+  --section-title-color: var(--color-white);
+  background-color: var(--color-black);
+  --button-color: var(--color-white);
+}
+
+/* Right-aligned navbar menu for site navigation */
+.navbar-menu {
+  float: right;
+}
+
+/* Base styling for navigation lists to remove default list styling and center text */
+.nav {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-align: center;
+}
+
+/* Styling for individual navigation items, including font, weight, and size */
+.nav .nav-item {
+  font-family: var(--nav-item-font-family);
+  font-weight: var(--nav-item-font-weight);
+  font-size: var(--nav-item-font-size);
+  letter-spacing: var(--nav-item-letter-spacing);
+  display: var(--nav-item-display);
+  margin: var(--nav-item-margin);
+}
+
+/* Block display for navigation links with padding for clickable area */
+.nav .nav-link {
+  display: block;
+  padding: 0.5rem 1rem;
+}
+
+/* Hover effects for navigation links for visual feedback */
+.nav.nav-link:hover {
+  color: var(--nav-item-link-hover);
+}
+
+/* Initial state for link hover animation */
+.nav .nav-link::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--color-white);
+  width: 0;
+  height: 0.2rem;
+}
+
+/* Hover state for navigation item animation, filling the underline */
+.nav .nav-item:hover .nav-link::before {
+  background-color: var(--color-primary);
+  width: 100%;
+}
+
+/* Padding for section body content for consistent spacing */
+.section-body {
+  padding: var(--section-body-padding);
+}
+
+/* Additional styling for hero sections, including background size */
+.section-hero {
+  background-size: 90rem auto;
+}
+
+/* Adjusting bottom margin for titles within hero sections for emphasis */
+.section-hero .section-title {
+  margin-bottom: 5rem;
+}
+
+/* Inner section padding for hero content, adjusting for layout */
+.section-hero .section-inner {
+  padding: 10rem 40rem 2rem 0;
+}
+
+/* Positioning and overflow handling for card elements */
+.card-work .card-outer {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Image styling within cards, ensuring cover fit and alignment */
+.card-work .card-image img {
+  height: 30rem;
+  width: 100%;
+  object-fit: cover;
+  vertical-align: bottom;
+}
+
+/* Absolute positioning for card content to overlay images */
+.card-work .card-inner {
+  position: absolute;
+  top: -0.1rem;
+  left: -0.1rem;
+  right: -0.1rem;
+  z-index: 1;
+}
+
+/* Hover effect for cards to reveal content with a background overlay */
+.card-work:hover .card-inner {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* Initial state for card titles, hidden until hover */
+.card-work .card-title {
+  text-align: center;
+  margin: 0;
+  opacity: 0;
+  height: 100%;
+  position: relative;
+}
+
+/* Styling for links within card titles, including padding for positioning */
+.card-work .card-title a {
+  display: block;
+  text-decoration: none;
+  padding-top: 45%;
+}
+
+/* After pseudo-element for card title links, used for additional styling */
+.card-work .card-title a::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  content: "";
+}
+
+/* Hover state for card titles, making them visible */
+.card-work:hover .card-title {
+  opacity: 1;
+}
+
+/* Margin reset for titles within service cards for consistent alignment */
+.card-services .card-title {
+  margin: 0;
+}
+
+/* Block display for links within service cards, including background color */
+.card-services a {
+  display: block;
+  padding: 2rem;
+  background-color: var(--color-light-grey);
+}
+
+/* Hover effects for service card links, changing color and background */
+.card-services a:hover {
+  color: var(--color-white);
+  background-color: var(--color-primary);
+  text-decoration: none;
+}
+
+/* Centered text alignment for testimonial cards */
+.card-testimonial {
+  text-align: center;
+}
+
+/* Styling for avatars within testimonial cards, including size and border radius */
+.card-testimonial .card-avatar {
+  border-radius: 50%;
+  width: 10rem;
+  height: 10rem;
+}
+
+/* Citation styling within card quotes, including padding and color */
+.card-testimonial .card-quote cite {
+  display: block;
+  padding-top: 1rem;
+  color: var(--color-primary);
+}
+
+/* Padding and text alignment for the footer section */
+.section-footer {
+  padding: var(--section-footer-padding);
+  text-align: var(--section-footer-align);
+}
+
+/* Footer styling, including padding for spacing */
+.footer {
+  padding: var(--footer-padding);
+}
+
+/* Copyright notice styling within the footer, including font size and color */
+.footer-copyright {
+  margin: 0;
+  font-size: var(--font-size-small);
+  color: var(--text-color);
+}
+
+/* Right-aligned text for lists within the footer for layout */
+.footer ul {
+  text-align: right;
+}
+
+/* Text color for address information within the footer for consistency */
+.footer-address {
+  color: var(--text-color);
+}
+
+/* Block display for social media */
+
+.social-link {
+  display: block;
+}
+
+.social-link > svg {
+  fill: var(--text-color);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-family-title);
+  font-weight: var(--font-weight-bold);
+}
+
+:root {
+  --color-primary: #D73953;
+  --color-black: #090909;
+  --color-white: #ffffff;
+  --color-light-grey: #f3f3f3;
+  --color-dark-grey: #353535;
+  --text-color: var(--color-black);
+  --font-family-base: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-family-title: 'Raleway', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-size-small: 1.2rem;
+  --font-size-medium: 1.6rem;
+  --font-size-large: 1.8rem;
+  --font-size-x-large: 2.3rem;
+  --font-size-xx-large: 4.8rem;
+  --font-weight-regular: 400;
+  --font-weight-bold: 700;
+  --line-height-small: 1.2;
+  --line-height-base: 1.5;
+  --line-height-big: 1.8;
+  --section-header-align: center;
+  --section-tagline-transform: uppercase;
+  --section-title-margin: 0;
+  --section-title-color: var(--color-black);
+  --section-padding: 5rem 0;
+  --section-header-padding: 0 0 3rem;
+  --section-body-padding: 0 0 3rem;
+  --section-footer-padding: 3rem 0 0;
+  --section-footer-align: center;
+  --footer-padding: 5rem 0 1rem;
+  --nav-item-font-family: var(--font-family-title);
+  --nav-item-font-weight: var(--font-weight-bold);
+  --nav-item-font-size: var(--font-size-medium);
+  --nav-item-letter-spacing: 0.04rem;
+  --nav-item-display: inline-block;
+  --nav-item-margin: 0 0 3rem 0;
+  --nav-item-link-hover: var(--color-white);
+  --section-tagline-margin: 0;
+  --button-display: inline-block;
+  --button-padding: 1.5rem 3rem;
+  --button-border: 0.2rem solid var(--color-primary);
+  --button-color: var(--color-black);
+  --button-text-decoration: none;
+  --button-font-size: var(--font-size-large);
+  --button-hover-color: var(--color-white);
+  --button-hover-text-decoration: none;
+  --button-hover-background: var(--color-primary);
+  --header-padding: 4rem 0 0;
+  --header-logo-position: relative;
+  --header-logo-link-display: inline-block;
+  --header-logo-link-position: absolute;
+  --header-logo-link-top: -1rem;
+  --header-logo-link-left: 0;
+}
