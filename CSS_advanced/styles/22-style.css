@@ -463,3 +463,177 @@ template {
   display: none;
 }
 
+```
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 62.5%; /* Base font size: 10px */
+}
+
+body {
+  color: var(--text-color);
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-medium); /* 1.6rem == 16px */
+  font-weight: var(--font-weight-regular);
+  min-height: 100vh; /* Full height */
+}
+
+a:link, a:visited {
+  color: var(--text-color);
+  text-decoration: none; /* No underline */
+}
+
+a:hover, a:active {
+  text-decoration: underline; /* Add underline on hover/active */
+  background-color: var(--color-light-grey); /* Light grey background on active links */
+}
+
+.visually-hidden {
+  display: none; /* Hide elements but keep them for screen readers */
+}
+
+.card-category {
+  color: var(--color-primary); /* Primary color for category cards */
+}
+
+.section-tagline {
+  color: var(--color-primary);
+  font-family: var(--font-family-title);
+  text-transform: uppercase; /* Uppercase tagline */
+  font-weight: bold;
+  margin: 0 0 2rem 0; /* Adjusted margin */
+}
+
+ul.row {
+  margin-left: -0.5rem;
+  margin-right: -0.5rem;
+  padding: 0;
+  list-style-type: none; /* No bullets */
+  display: flex;
+  flex-wrap: wrap; /* Enable wrapping */
+}
+
+.row::after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+.col-1-3, .col-1-2 {
+  padding: 0.5rem;
+}
+
+.col-1-3 {
+  width: 33.33%;
+}
+
+.col-1-2 {
+  width: 50%;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto; /* Center container */
+  padding: 0 2rem;
+}
+
+.section-title {
+  font-family: var(--font-family-title);
+  font-size: var(--font-size-xx-large);
+  font-weight: bold;
+  color: var(--section-title-color);
+  margin-bottom: 2rem; /* Adjusted bottom margin */
+}
+
+.section {
+  padding: 5rem 0; /* More padding */
+}
+
+.section-header {
+  text-align: center; /* Centered text */
+  margin-bottom: 3rem; /* Bottom margin */
+}
+
+.navbar-menu {
+  text-align: right; /* Align menu items to the right */
+}
+
+.nav {
+  display: flex;
+  justify-content: center; /* Center navigation */
+  list-style: none; /* No bullets */
+  padding: 0;
+}
+
+.nav .nav-item {
+  margin: 0 1rem; /* Space between items */
+}
+
+.nav .nav-link {
+  color: var(--text-color); /* Link color */
+  padding: 0.5rem 1rem;
+  text-decoration: none; /* No underline */
+  font-weight: bold;
+}
+
+.nav .nav-link:hover, .nav .nav-link:focus {
+  color: var(--color-primary); /* Primary color on hover/focus */
+}
+
+.section-body, .section-footer {
+  padding: 3rem 0; /* Adjusted padding */
+}
+
+.footer {
+  text-align: center; /* Center footer content */
+  padding-top: 5rem;
+  padding-bottom: 1rem;
+}
+
+.footer ul {
+  margin: 0;
+  padding: 0;
+  list-style: none; /* No bullets */
+}
+
+:root {
+  --color-primary: #D73953;
+  --color-black: #090909;
+  --color-white: #ffffff;
+  --color-light-grey: #f3f3f3;
+  --color-dark-grey: #353535;
+  --text-color: var(--color-black);
+  --font-family-base: 'Open Sans', Arial, sans-serif;
+  --font-family-title: 'Raleway', Arial, sans-serif;
+  --font-size-small: 1.2rem; /* 12px */
+  --font-size-medium: 1.6rem; /* 16px */
+  --font-size-large: 1.8rem; /* 18px */
+  --font-size-x-large: 2.3rem; /* 23px */
+  --font-size-xx-large: 4.8rem; /* 48px */
+  --font-weight-regular: 400;
+  --font-weight-bold: 700;
+  --line-height-small: 1.2;
+  --line-height-base: 1.5;
+  --line-height-big: 1.8;
+  --section-header-align: center;
+  --section-tagline-transform: uppercase;
+  --section-title-margin: 0;
+  --section-title-color: var(--color-black);
+  --section-padding: 5rem 0;
+  --section-header-padding: 0 0 3rem;
+  --section-body-padding: 0 0 3rem;
+  --section-footer-padding: 3rem 0 0;
+  --section-footer-align: center;
+  --footer-padding: 5rem 0 1rem;
+  --nav-item-font-family: var(--font-family-title);
+  --nav-item-font-weight: var(--font-weight-bold);
+  --nav-item-font-size: var(--font-size-medium);
+  --nav-item-letter-spacing: 0.04rem;
+  --nav-item-display: inline-block;
+  --nav-item-margin: 0 0 3rem 0;
+  --nav-item-link-hover: var(--color-primary);
+  --section-tagline-margin: 0;
+}

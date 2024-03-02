@@ -462,4 +462,153 @@ template {
 [hidden] {
   display: none;
 }
+*, *:before, *:after {
+  box-sizing: border-box;
+}
 
+html {
+  scroll-behavior: smooth;
+  font-size: 62.5%; /* Sets the base font size to be more manageable. */
+}
+
+body {
+  margin: 0; /* Resets the default margin. */
+  color: var(--text-color); /* Uses a CSS variable for text color. */
+  font-family: var(--font-family-base); /* Applies a base font family from a CSS variable. */
+  font-size: var(--font-size-medium); /* Sets a medium font size based on a CSS variable. */
+  font-weight: var(--font-weight-regular); /* Sets the font weight to regular using a CSS variable. */
+  line-height: var(--line-height-base); /* Uses a CSS variable to set the base line height. */
+  background-color: var(--color-background); /* Adds a background color using a CSS variable. */
+}
+
+a:link, a:visited {
+  color: var(--link-color); /* Sets link color using a CSS variable. */
+  text-decoration: none; /* Removes the underline from links. */
+}
+
+a:hover, a:active {
+  text-decoration: underline; /* Underlines links on hover and when active. */
+  background-color: var(--link-background-hover); /* Changes the background color on hover/active. */
+}
+
+.visually-hidden:not(:focus):not(:active) {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.card-category {
+  color: var(--color-accent); /* Sets the category card text color using a CSS variable. */
+  font-weight: bold; /* Makes the category text bold. */
+}
+
+.section-tagline {
+  color: var(--color-accent-light); /* Light accent color for section taglines. */
+  font-family: var(--font-family-highlight); /* Uses a highlighted font family for taglines. */
+  text-transform: uppercase; /* Transforms tagline text to uppercase. */
+  margin-bottom: 2rem; /* Adds bottom margin to section taglines. */
+}
+
+ul.row {
+  display: flex; /* Changes row display to flex. */
+  flex-wrap: wrap; /* Allows row items to wrap. */
+  margin-left: -15px; /* Adjusts row margin to allow for spacing between columns. */
+  margin-right: -15px;
+}
+
+.col-1-3, .col-1-2 {
+  padding-left: 15px; /* Adds padding to columns for spacing. */
+  padding-right: 15px;
+}
+
+.col-1-3 {
+  flex: 0 0 33.333333%; /* Sets flex basis for one-third columns. */
+}
+
+.col-1-2 {
+  flex: 0 0 50%; /* Sets flex basis for half-width columns. */
+}
+
+.container {
+  max-width: 960px; /* Sets a maximum width for the container. */
+  margin: 0 auto; /* Centers the container. */
+  padding: 0 15px; /* Adds padding to the container. */
+}
+
+.section-title {
+  color: var(--color-primary-dark); /* Dark primary color for section titles. */
+  text-align: center; /* Centers section titles. */
+  margin-top: 0; /* Resets the top margin for section titles. */
+  margin-bottom: 1rem; /* Adds bottom margin to section titles. */
+}
+
+.section-header, .section-footer {
+  text-align: center; /* Centers text in section headers and footers. */
+  padding-top: 3rem; /* Adds top padding to section headers and footers. */
+  padding-bottom: 3rem; /* Adds bottom padding to section headers and footers. */
+}
+
+.navbar-menu {
+  display: flex; /* Changes navbar menu to flex display. */
+  justify-content: flex-end; /* Aligns navbar menu items to the right. */
+  list-style-type: none; /* Removes list styling. */
+}
+
+.nav .nav-item {
+  margin-left: 20px; /* Adds left margin to navigation items. */
+}
+
+.nav .nav-link {
+  color: var(--color-text-light); /* Light text color for navigation links. */
+  padding: 10px 15px; /* Adds padding to navigation links. */
+}
+
+.footer {
+  background-color: var(--color-footer-background); /* Sets the footer background color. */
+  color: var(--color-footer-text); /* Sets the footer text color. */
+  padding-top: 40px; /* Adds top padding to the footer. */
+  padding-bottom: 40px; /* Adds bottom padding to the footer. */
+}
+
+:root {
+  --color-primary: #D73953;
+  --color-black: #090909;
+  --color-white: #ffffff;
+  --color-light-grey: #f3f3f3;
+  --color-dark-grey: #353535;
+  --text-color: var(--color-black);
+  --font-family-base: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-family-title: 'Raleway', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-size-small: 1.2rem;
+  --font-size-medium: 1.6rem;
+  --font-size-large: 1.8rem;
+  --font-size-x-large: 2.3rem;
+  --font-size-xx-large: 4.8rem;
+  --font-weight-regular: 400;
+  --font-weight-bold: 700;
+  --line-height-small: 1.2;
+  --line-height-base: 1.5;
+  --line-height-big: 1.8;
+  --section-header-align: center;
+  --section-tagline-transform: uppercase;
+  --section-title-margin: 0;
+  --section-title-color: var(--color-black);
+  --section-padding: 5rem 0;
+  --section-header-padding: 0 0 3rem;
+  --section-body-padding: 0 0 3rem;
+  --section-footer-padding: 3rem 0 0;
+  --section-footer-align: center;
+  --footer-padding: 5rem 0 1rem;
+  --nav-item-font-family: var(--font-family-title);
+  --nav-item-font-weight: var(--font-weight-bold);
+  --nav-item-font-size: var(--font-size-medium);
+  --nav-item-letter-spacing: 0.04rem;
+  --nav-item-display: inline-block;
+  --nav-item-margin: 0 0 3rem 0;
+  --nav-item-link-hover: var(--color-primary);
+  --section-tagline-margin: 0;
+}
